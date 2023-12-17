@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table Booking</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="h2 text-center my-4 text-info-emphasis">The Place</h1>
+		<h2 class="h3 text-center my-3">Table Booking</h1>
+		<form class="mb-4">
+			<input type="text" class="form-control mb-2" placeholder="Name">
+			<input type="text" class="form-control mb-2" placeholder="Phone">
+			<input type="text" class="form-control mb-2" placeholder="Number of people">
+			<select class="form-select mb-2">
+				<option value="0" selected disabled>From Time</option>
+				<option value="6">6:00 AM</option>
+				<option value="7">7:00 AM</option>
+				<option value="8">8:00 AM</option>
+				<option value="9">9:00 AM</option>
+				<option value="10">10:00 AM</option>
+				<option value="11">11:00 AM</option>
+				<option value="12">12:00 PM</option>
+				<option value="13">1:00 PM</option>
+				<option value="14">2:00 PM</option>
+				<option value="15">3:00 PM</option>
+				<option value="16">4:00 PM</option>
+				<option value="17">5:00 PM</option>
+				<option value="18">6:00 PM</option>
+				<option value="19">7:00 PM</option>
+			</select>
+			<select class="form-select mb-2">
+				<option value="0" selected disabled>To Time</option>
+				<option value="7">7:00 AM</option>
+				<option value="8">8:00 AM</option>
+				<option value="9">9:00 AM</option>
+				<option value="10">10:00 AM</option>
+				<option value="11">11:00 AM</option>
+				<option value="12">12:00 PM</option>
+				<option value="13">1:00 PM</option>
+				<option value="14">2:00 PM</option>
+				<option value="15">3:00 PM</option>
+				<option value="16">4:00 PM</option>
+				<option value="17">5:00 PM</option>
+				<option value="18">6:00 PM</option>
+				<option value="19">7:00 PM</option>
+				<option value="20">8:00 PM</option>
+			</select>
+			<button id="submit" class="btn btn-primary w-100">Submit</button>
+		</form>
+
+		<a href="index.html" class="btn btn-secondary w-100">Go Home</a>
+	</div>
+
+	<script>
+		document.getElementById("submit").onclick = booked;
+		
+		function booked() {
+			document.querySelector("form").remove();
+			document.querySelector("a").remove();
+
+			let div = document.createElement("div");
+			div.classList.add("alert", "alert-info", "my-3", "text-center");
+			div.innerHTML = "Thanks for your interest in our restaurent.<br>We will contact you very soon to confirm the reservation.";
+
+			document.querySelector(".container").appendChild(div);
+
+			setTimeout(() => {
+				window.location = "index.html";
+			}, 1000);
+		}
+
+
+	</script>
+</body>
+</html>
